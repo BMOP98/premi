@@ -34,7 +34,7 @@ function App() {
     if (provincia && ano) {
       loadExcelData();
     }
-  }, [provincia, ano]);
+  }, [provincia, ano, loadExcelData]);
 
   const loadExcelData = () => {
     fetch('/valores.xlsx')
