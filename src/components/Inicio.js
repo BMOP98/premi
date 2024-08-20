@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Container, Row, Col, Form, Button, Modal, Spinner } from 'react-bootstrap';
 import MapView from './MapView';
 import * as XLSX from 'xlsx';
@@ -29,7 +29,8 @@ const Inicio = () => {
   const provincias = [
     'AZUAY', 'BOLIVAR', 'CAÑAR', 'CARCHI', 'CHIMBORAZO', 'COTOPAXI', 'EL ORO', 'ESMERALDAS', 'GALAPAGOS', 'GUAYAS', 'IMBABURA', 'LOJA', 'LOS RIOS', 'MANABI', 'MORONA SANTIAGO', 'NAPO', 'ORELLANA', 'PASTAZA', 'PICHINCHA', 'SANTA ELENA', 'SANTO DOMINGO DE LOS TSACHILAS', 'SUCUMBIOS', 'TUNGURAHUA', 'ZAMORA CHINCHIPE'
   ];
-  const loadExcelData = () => {
+
+  const loadExcelData = useCallback(() => {
     fetch('/valores.xlsx')
       .then(response => {
         if (!response.ok) {
@@ -77,15 +78,13 @@ const Inicio = () => {
       .catch(error => {
         console.error('Error al procesar el archivo Excel:', error);
       });
-  };
+  }, [provincia, ano]);
 
   useEffect(() => {
     if (provincia && ano) {
       loadExcelData();
     }
   }, [provincia, ano, loadExcelData]);
-
-  
 
   const loadPlanInversionData = async () => {
     const response = await fetch('https://apimineria.azurewebsites.net/apiGeneraProyecto', {
