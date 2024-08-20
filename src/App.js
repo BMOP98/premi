@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Button, Modal, Spinner } from 'react-bootstrap';
 import MapView from './components/MapView';
 import * as XLSX from 'xlsx';
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import geojsonData from './data/provincias.json'; // Asegúrate de proporcionar la ruta correcta a tu archivo GeoJSON
+import './App.css';
 
 function App() {
   const [provincia, setProvincia] = useState('');
