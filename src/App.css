@@ -1,38 +1,81 @@
-.App {
+/* App.css */
+
+body {
+  background-image: url('../public/fondo.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: #007bff;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.spinner {
+  margin-left: 10px;
+}
+
+.modal-body h5 {
+  margin-top: 20px;
+  color: #343a40;
+}
+
+.modal-body p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.map-container {
   text-align: center;
+  margin-bottom: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.map {
+  width: 100%;
+  height: 400px; /* Ajusta la altura del mapa según sea necesario */
+  border: 2px solid #007bff; /* Borde azul */
+  border-radius: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.map-container h3 {
+  margin-bottom: 15px;
+  color: #007bff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.custom-select {
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  font-size: 1em;
+  padding: 5px;
+  width: 300px;
+  margin-right: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.prompt {
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  font-size: 1em;
+  padding: 5px;
+  width: 300px;
+  margin-right: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Nueva clase CSS para ajustar la altura del cuerpo del modal */
+.custom-modal-body {
+  height: 500px; /* Ajusta esta altura según sea necesario */
+  overflow-y: auto;
 }
