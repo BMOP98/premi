@@ -29,13 +29,6 @@ function App() {
   const provincias = [
     'AZUAY', 'BOLIVAR', 'CAÑAR', 'CARCHI', 'CHIMBORAZO', 'COTOPAXI', 'EL ORO', 'ESMERALDAS', 'GALAPAGOS', 'GUAYAS', 'IMBABURA', 'LOJA', 'LOS RIOS', 'MANABI', 'MORONA SANTIAGO', 'NAPO', 'ORELLANA', 'PASTAZA', 'PICHINCHA', 'SANTA ELENA', 'SANTO DOMINGO DE LOS TSACHILAS', 'SUCUMBIOS', 'TUNGURAHUA', 'ZAMORA CHINCHIPE'
   ];
-
-  useEffect(() => {
-    if (provincia && ano) {
-      loadExcelData();
-    }
-  }, [provincia, ano, loadExcelData]);
-
   const loadExcelData = () => {
     fetch('/valores.xlsx')
       .then(response => {
@@ -85,6 +78,14 @@ function App() {
         console.error('Error al procesar el archivo Excel:', error);
       });
   };
+
+  useEffect(() => {
+    if (provincia && ano) {
+      loadExcelData();
+    }
+  }, [provincia, ano, loadExcelData]);
+
+  
 
   const loadPlanInversionData = async () => {
     const response = await fetch('https://apimineria.azurewebsites.net/apiGeneraProyecto', {
