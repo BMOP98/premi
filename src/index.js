@@ -1,19 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router } from 'react-router-dom';
-import App from './App';
+import ReactDOM from 'react-dom/client'; // Cambiado de 'react-dom' a 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import App from './App';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
+const root = ReactDOM.createRoot(document.getElementById('root')); // Crea una raíz
 root.render(
   <React.StrictMode>
-    <Router>
-      <App />
-      <ToastContainer />
-    </Router>
+    <App />
   </React.StrictMode>
 );
